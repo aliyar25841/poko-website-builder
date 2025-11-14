@@ -6,7 +6,7 @@ uuid: 23a1826e78b3
 localizationKey: 1f9f28bf27cc
 name: SESU
 eleventyNavigation:
-  order: 0
+  order: 4
 ---
 # Service support formation (SESU)
 
