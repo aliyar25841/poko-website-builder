@@ -1,5 +1,6 @@
 siteName: Repères ASBL
-productionUrl: https://www.reperes.be
+productionUrl: https://www.reperes.be/
+logo: /_images/reperes-asbl-logo-sans-bords-rvb-33.webp
 languages:
   - code: fr
     name: Français
