@@ -5,7 +5,8 @@ createdAt: 2025-11-14T09:43:00.000Z
 uuid: f0c4d5f2e36a
 localizationKey: fd2e1caad552
 name: Formations
-vars: {}
+eleventyNavigation:
+  order: 0
 ---
 # Formations
 
