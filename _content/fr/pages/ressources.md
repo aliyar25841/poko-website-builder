@@ -6,7 +6,7 @@ uuid: 3bfd46874867
 localizationKey: d23345a84392
 name: Ressources
 eleventyNavigation:
-  order: 0
+  order: 6
 ---
 # Ressources
 
