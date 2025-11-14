@@ -1,0 +1,55 @@
+ctxCssImport:
+  filename: ctx.css
+inlineAllStyles: true
+widthsContexts:
+  - name: main
+    max: 80rem
+    prose: 50rem
+fontStacksContexts:
+  - name: main
+    body:
+      native: system-ui
+    heading:
+      native: system-ui
+    code:
+      native: monospace-code
+  - name: font-family-Rounded-Sans
+    body:
+      native: rounded-sans
+      custom: ''
+    heading:
+      native: system-ui
+      custom: ''
+    code:
+      native: monospace-code
+      custom: ''
+typeScales:
+  - name: main
+    minFontSize: 18
+    maxFontSize: 20
+    minTypeScale: 1.2
+    maxTypeScale: 1.25
+colors:
+  - name: Vermillon
+    value: '#de3831'
+  - name: Orange peel
+    value: '#ffa02f'
+  - name: Burnt umber
+    value: '#802d25'
+  - name: Cooper
+    value: '#a97433'
+  - name: Delft Blue
+    value: '#343d63'
+  - name: YlnMn Blue
+    value: '#4c5792'
+  - name: Gray
+    value: '#807973'
+  - name: Silver
+    value: '#b7b1a9'
+  - name: Timberwolf
+    value: '#e0ded8'
+  - name: White
+    value: '#ffffff'
+styleContexts:
+  - name: main
+    value: ctx
