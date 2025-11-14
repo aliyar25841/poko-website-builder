@@ -11,7 +11,7 @@ fontStacksContexts:
       native: rounded-sans
       custom: ''
     heading:
-      native: system-ui
+      native: rounded-sans
       custom: ''
     code:
       native: monospace-code
