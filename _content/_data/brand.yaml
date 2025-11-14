@@ -200,6 +200,62 @@ palettes:
       border__mark: ''
       track-color: ''
       thumb-color: ''
+  - name: Gray-Contrast
+    text: Gray
+    bg: Timberwolf
+    border: ''
+    outline: ''
+    text-decoration: ''
+    text--marker: ''
+    text-emphasis: ''
+    text--selection: ''
+    bg--selection: ''
+    shadow: ''
+    caret: ''
+    column-rule: ''
+    fill: ''
+    stroke: ''
+    outline--focus: ''
+    advanced: null
+  - name: Burnt-umber-Contrast
+    text: White
+    bg: Burnt-umber
+    border: ''
+    outline: ''
+    text-decoration: ''
+    text--marker: ''
+    text-emphasis: ''
+    text--selection: ''
+    bg--selection: ''
+    shadow: ''
+    caret: ''
+    column-rule: ''
+    fill: ''
+    stroke: ''
+    outline--focus: ''
+    advanced:
+      text__heading: ''
+      bg__heading: ''
+      text__a: Orange-peel
+      bg__a: ''
+      text__a--hover: ''
+      bg__a--hover: Vermillon
+      text__button: ''
+      bg__button: ''
+      text__button--hover: ''
+      bg__button--hover: ''
+      text__button--disabled: ''
+      bg__button--disabled: ''
+      icon-fill: ''
+      icon-stroke: ''
+      text__code: ''
+      bg__code: ''
+      border__code: ''
+      text__mark: ''
+      bg__mark: ''
+      border__mark: ''
+      track-color: ''
+      thumb-color: ''
 styleContexts:
   - name: main
     value: ctx
