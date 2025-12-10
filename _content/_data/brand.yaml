@@ -248,6 +248,40 @@ palettes:
     stroke: ''
     outline--focus: ''
     advanced: null
+  - name: orange-peel-white
+    text: Orange-peel
+    bg: White
+    border: ''
+    outline: ''
+    text-decoration: ''
+    text--marker: ''
+    text-emphasis: ''
+    text--selection: ''
+    bg--selection: ''
+    shadow: ''
+    caret: ''
+    column-rule: ''
+    fill: ''
+    stroke: ''
+    outline--focus: ''
+    advanced: null
+  - name: orange-peel-white-contrast
+    text: White
+    bg: Orange-peel
+    border: ''
+    outline: ''
+    text-decoration: ''
+    text--marker: ''
+    text-emphasis: ''
+    text--selection: ''
+    bg--selection: ''
+    shadow: ''
+    caret: ''
+    column-rule: ''
+    fill: ''
+    stroke: ''
+    outline--focus: ''
+    advanced: null
 styleContexts:
   - name: main
     value: ctx
