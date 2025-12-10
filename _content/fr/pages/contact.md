@@ -7,7 +7,6 @@ localizationKey: 769cf9a71f07
 name: Contact
 eleventyNavigation:
   order: 8
-vars: {}
 ---
 # Contactez-nous
 
