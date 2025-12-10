@@ -44,8 +44,8 @@ colors:
   - name: White
     value: '#ffffff'
 palettes:
-  - name: Vermillon
-    text: Vermillon
+  - name: gray-white
+    text: Gray
     bg: White
     border: ''
     outline: ''
@@ -60,71 +60,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced:
-      text__heading: ''
-      bg__heading: ''
-      text__a: Orange-peel
-      bg__a: ''
-      text__a--hover: Vermillon
-      bg__a--hover: ''
-      text__button: ''
-      bg__button: ''
-      text__button--hover: ''
-      bg__button--hover: ''
-      text__button--disabled: ''
-      bg__button--disabled: ''
-      icon-fill: ''
-      icon-stroke: ''
-      text__code: ''
-      bg__code: ''
-      border__code: ''
-      text__mark: ''
-      bg__mark: ''
-      border__mark: ''
-      track-color: ''
-      thumb-color: ''
-  - name: Burnt-umber
-    text: Burnt-umber
-    bg: White
-    border: ''
-    outline: ''
-    text-decoration: ''
-    text--marker: ''
-    text-emphasis: ''
-    text--selection: ''
-    bg--selection: ''
-    shadow: ''
-    caret: ''
-    column-rule: ''
-    fill: ''
-    stroke: ''
-    outline--focus: ''
-    advanced:
-      text__heading: ''
-      bg__heading: ''
-      text__a: Vermillon
-      bg__a: ''
-      text__a--hover: Burnt-umber
-      bg__a--hover: ''
-      text__button: ''
-      bg__button: ''
-      text__button--hover: ''
-      bg__button--hover: ''
-      text__button--disabled: ''
-      bg__button--disabled: ''
-      icon-fill: ''
-      icon-stroke: ''
-      text__code: ''
-      bg__code: ''
-      border__code: ''
-      text__mark: ''
-      bg__mark: ''
-      border__mark: ''
-      track-color: ''
-      thumb-color: ''
-  - name: Burnt-umber-Contrast
+    advanced: null
+  - name: gray-white-contrast
     text: White
-    bg: Burnt-umber
+    bg: Gray
     border: ''
     outline: ''
     text-decoration: ''
@@ -138,30 +77,8 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced:
-      text__heading: ''
-      bg__heading: ''
-      text__a: Orange-peel
-      bg__a: ''
-      text__a--hover: ''
-      bg__a--hover: Vermillon
-      text__button: ''
-      bg__button: ''
-      text__button--hover: ''
-      bg__button--hover: ''
-      text__button--disabled: ''
-      bg__button--disabled: ''
-      icon-fill: ''
-      icon-stroke: ''
-      text__code: ''
-      bg__code: ''
-      border__code: ''
-      text__mark: ''
-      bg__mark: ''
-      border__mark: ''
-      track-color: ''
-      thumb-color: ''
-  - name: Delft-blue
+    advanced: null
+  - name: Delft_blue-white
     text: Delft-Blue
     bg: White
     border: ''
@@ -177,30 +94,8 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced:
-      text__heading: ''
-      bg__heading: ''
-      text__a: YlnMn-Blue
-      bg__a: ''
-      text__a--hover: Delft-Blue
-      bg__a--hover: ''
-      text__button: ''
-      bg__button: ''
-      text__button--hover: ''
-      bg__button--hover: ''
-      text__button--disabled: ''
-      bg__button--disabled: ''
-      icon-fill: ''
-      icon-stroke: ''
-      text__code: ''
-      bg__code: ''
-      border__code: ''
-      text__mark: ''
-      bg__mark: ''
-      border__mark: ''
-      track-color: ''
-      thumb-color: ''
-  - name: Delft-blue-Contrast
+    advanced: null
+  - name: Delft_blue-white-contrast
     text: White
     bg: Delft-Blue
     border: ''
@@ -217,8 +112,8 @@ palettes:
     stroke: ''
     outline--focus: ''
     advanced: null
-  - name: Gray
-    text: Gray
+  - name: cooper-white
+    text: Cooper
     bg: White
     border: ''
     outline: ''
@@ -233,32 +128,78 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced:
-      text__heading: ''
-      bg__heading: ''
-      text__a: Orange-peel
-      bg__a: ''
-      text__a--hover: Vermillon
-      bg__a--hover: ''
-      text__button: ''
-      bg__button: ''
-      text__button--hover: ''
-      bg__button--hover: ''
-      text__button--disabled: ''
-      bg__button--disabled: ''
-      icon-fill: ''
-      icon-stroke: ''
-      text__code: ''
-      bg__code: ''
-      border__code: ''
-      text__mark: ''
-      bg__mark: ''
-      border__mark: ''
-      track-color: ''
-      thumb-color: ''
-  - name: Gray-Contrast
-    text: Gray
-    bg: Timberwolf
+    advanced: null
+  - name: cooper-white-contrast
+    text: White
+    bg: Cooper
+    border: ''
+    outline: ''
+    text-decoration: ''
+    text--marker: ''
+    text-emphasis: ''
+    text--selection: ''
+    bg--selection: ''
+    shadow: ''
+    caret: ''
+    column-rule: ''
+    fill: ''
+    stroke: ''
+    outline--focus: ''
+    advanced: null
+  - name: burnt_umber-white
+    text: Burnt-umber
+    bg: White
+    border: ''
+    outline: ''
+    text-decoration: ''
+    text--marker: ''
+    text-emphasis: ''
+    text--selection: ''
+    bg--selection: ''
+    shadow: ''
+    caret: ''
+    column-rule: ''
+    fill: ''
+    stroke: ''
+    outline--focus: ''
+    advanced: null
+  - name: burnt_umber-white-contrast
+    text: White
+    bg: Burnt-umber
+    border: ''
+    outline: ''
+    text-decoration: ''
+    text--marker: ''
+    text-emphasis: ''
+    text--selection: ''
+    bg--selection: ''
+    shadow: ''
+    caret: ''
+    column-rule: ''
+    fill: ''
+    stroke: ''
+    outline--focus: ''
+    advanced: null
+  - name: vermillon-white
+    text: Vermillon
+    bg: White
+    border: ''
+    outline: ''
+    text-decoration: ''
+    text--marker: ''
+    text-emphasis: ''
+    text--selection: ''
+    bg--selection: ''
+    shadow: ''
+    caret: ''
+    column-rule: ''
+    fill: ''
+    stroke: ''
+    outline--focus: ''
+    advanced: null
+  - name: vermillon-white-contrast
+    text: White
+    bg: Vermillon
     border: ''
     outline: ''
     text-decoration: ''
