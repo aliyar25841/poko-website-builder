@@ -7,7 +7,6 @@ localizationKey: 1f9f28bf27cc
 name: SESU
 eleventyNavigation:
   order: 4
-vars: {}
 ---
 :::: div
 
@@ -40,4 +39,42 @@ pour en savoir plus sur le contexte cliquez sur ce lien.
 
 Trois missions sont attendues du Service Support Formation.
 
-{% section type="custom", vars={}, blocks=[{"value":"### La formation et l’accompagnent en Promotion à la santé\n\nDécouvrir nos dispositifs de formation et d’accompagnement","type":"markdown"},{"value":"### Le soutien à la concertation\n\nNous participons à diverses concertations, notamment la concertation Interpiliers qui regroupe le service d’accompagnement (CBPS) et l’ensemble des services supports. Nous participons également aux rencontrées organisées par les fédérations bruxelloises et wallonnes de promotion de la santé.\n\nDécouvrir les acteurs du réseau de la promotion de la santé:","type":"markdown"},{"value":"### L’évaluation\n\nPlusieurs démarches d’analyse et de diagnostic ont été mises en œuvre depuis le début de notre mandat en 2018. Celles-ci ont donné lieu à la production de documentation et au soutien de recherche menée entre-autres avec RESO-UCL.","type":"markdown"}], advanced={} %}
+-ICONE-
+
+### La formation et l’accompagnent en Promotion à la santé
+
+Découvrir nos dispositifs de formation et d’accompagnement
+
+-BOUTON-Dispositifs de formation-
+
+-ICONE-
+
+### Le soutien à la concertation
+
+Nous participons à diverses concertations, notamment la concertation Interpiliers qui regroupe le service d’accompagnement (CBPS) et l’ensemble des services supports. Nous participons également aux rencontrées organisées par les fédérations bruxelloises et wallonnes de promotion de la santé.
+
+Découvrir les acteurs du réseau de la promotion de la santé:
+
+-BOUTON-Bruxelles-
+
+-BOUTON-Wallonie-
+
+-BOUTON-Fédérations-
+
+-ICONE-
+
+### L’évaluation
+
+Plusieurs démarches d’analyse et de diagnostic ont été mises en œuvre depuis le début de notre mandat en 2018. Celles-ci ont donné lieu à la production de documentation et au soutien de recherche menée entre-autres avec RESO-UCL.
+
+-BOUTON-Découvrir les documents-
+
+### Découvrez les autres SESU
+
+…Vous pouvez faire appel au service d’accompagnement CBPS et aux 8 autres SESU financés en région Bruxelloise pour vous apporter un soutien en promotion de la santé…
+
+**Afin de faciliter l’accès à nos services, nous avons finalisé des fiches synthétiques reprenant nos missions et les services que nous vous offrons.**
+
+-BOUTON-Télécharger les fiches techniques-
+
+### Ressources réalisées dans le cadre du SESU
