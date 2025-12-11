@@ -48,7 +48,7 @@ La régionalisation de la promotion de la santé à partir de 2014 a transformé
 - À Bruxelles, l’association est reconnue comme service support par la COCOF dès 2018 et continue d’accompagner les opérateurs du secteur, tout en proposant des formations ouvertes aux professionnel·les du social et de la santé.
 - En Wallonie, Repères participe aux plans et décrets régionaux, et obtient en 2023 un agrément comme opérateur en promotion de la santé.
 
-____ENCADRÉ_____
+**__ENCADRÉ_**__
 
 ## Notre cadre de référence
 
@@ -62,7 +62,7 @@ Pour Repères, la promotion de la santé n’est pas seulement un domaine d’in
 4. Transversalité et intersectorialité
 5. Participation et co-construction
 
-____ENCADRÉ_____
+**__ENCADRÉ_**__
 
 ## Pour Repères, se former c’est…
 
@@ -89,3 +89,28 @@ ____ENCADRÉ_____
 - Contribuer au respect des différences et à la lutte contre les inégalités, ainsi que toutes les formes de précarisation et de disqualification.
 
 Cette approche nous permet de concevoir des formations participatives et adaptées, qui tiennent compte des interactions entre individus, communautés et environnement, pour favoriser le bien-être individuel et collectif.
+
+-Lien vers pdf mettre le nom du fichier «notre charte de promotion de la santé»-
+
+{% image src="/_images/photo-equipe-dos.webp" %}
+
+## Notre équipe
+
+L’équipe de Repères rassemble des formateurs et formatrices pluridisciplinaires : travailleurs sociaux, psychologues, pédagogues et spécialistes en santé communautaire, éducation sexuelle et affective, formation d’adultes, supervision d’équipes et accompagnement de projets.
+
+Cette diversité enrichit nos formations grâce à la mise en commun des expériences, une réflexion continue sur nos pratiques et une 
+
+écoute attentive des besoins des participant·es.
+
+### Nos formateurs et formatrices
+
+-PHOTOS + NOMS + FONCTIONS membre de l'équipe-
+
+- **Caroline Lejeune**
+- **Dominique Werbrouck**
+- **Jeanne Reyre**
+- **Manoë Jacquet**
+coordinatrice
+- **Pascal Kayaert**
+
+Notre gouvernance L’organe d’administration est composé de membres de l’équipe. L’assemblée générale rassemble des membres actuels et anciens issus du champ de la promotion de la santé.
