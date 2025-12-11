@@ -31,6 +31,9 @@ Les services de support en promotion de la santé offrent **un accompagnement m�
 
 {% image src="/_images/logo-francophones-bruxelles-blanc.webp" %}
 
+Le SESU est financeé par la COCOF
+pour en savoir plus sur le contexte cliquez sur ce lien.
+
 **__ENCADRÉ_**_
 
 ## Le service support formation
