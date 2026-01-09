@@ -16,7 +16,7 @@ function stripUrl(input, langPrefixRegex, collectionNamesRegex) {
 function lookupTemplateTranslations(
   inputOptional,
   templates,
-  collectionName = "all"
+  collectionName = "all",
 ) {
   const input = inputOptional || this.page.url;
   // Avoid going through all templates if we have the right data available in ctx
@@ -27,11 +27,13 @@ function lookupTemplateTranslations(
   // TODO: Make this more robust
   // Removing lang prefix and collection name from input makes collision more probable
 
-  const langPrefixes = this.ctx.languages.map((lang) => lang.prefix);
+  const langPrefixes = (this.ctx?.languages || languages).map(
+    (lang) => lang.prefix,
+  );
   const langPrefixRegex = new RegExp(`^\/*(${langPrefixes.join("|")})\/`);
   const collectionNames = Object.keys(this.ctx.collections);
   const collectionNamesRegex = new RegExp(
-    `^\/*(${collectionNames.join("|")})\/`
+    `^\/*(${collectionNames.join("|")})\/`,
   );
   const cleanedInput = stripUrl(input, langPrefixRegex, collectionNamesRegex);
 
@@ -51,7 +53,7 @@ function lookupTemplateTranslations(
     const cleanedTemplateUrl = stripUrl(
       templ.page.url,
       langPrefixRegex,
-      collectionNamesRegex
+      collectionNamesRegex,
     );
 
     if (cleanedTemplateUrl === cleanedInput) {
@@ -86,7 +88,7 @@ export function locale_url(...args) {
       this,
       input,
       undefined,
-      collectionName
+      collectionName,
     );
 
     const translationMatch = templateTranslations?.find((translation) => {

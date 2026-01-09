@@ -452,6 +452,9 @@ const mostCommonMarkdownCollectionConfig = {
       direction: "ascending",
     },
   },
+  editor: {
+    preview: false,
+  },
 };
 
 class CmsConfig {
@@ -465,7 +468,7 @@ class CmsConfig {
   }
   async render(data) {
     const fontsourceFonts = (data.fontServices?.fontsource?.fonts || []).map(
-      ({ family: value }) => ({ value, label: value })
+      ({ family: value }) => ({ value, label: value }),
     );
     let defaultEditorComponents;
     try {
@@ -473,7 +476,7 @@ class CmsConfig {
         "../../../content-static/admin/defaultEditorComponents.js"
       );
     } catch (error) {
-      console.log("Failed to import default Editor Components\n", error);
+      console.error("Failed to import default Editor Components\n", error);
     }
     let userEditorComponents;
     try {
@@ -481,10 +484,12 @@ class CmsConfig {
         `${WORKING_DIR_ABSOLUTE}/_config/editorComponents.js`
       );
     } catch (error) {
-      console.log("Failed to import user's Editor Components\n", error);
+      console.warn(
+        `INFO: No user's Editor Components found at "${WORKING_DIR_ABSOLUTE}/_config/editorComponents.js"`,
+      );
     }
     const defaultEditorComponentNames = Object.keys(
-      defaultEditorComponents || {}
+      defaultEditorComponents || {},
     );
     const userEditorComponentNames = Object.keys(userEditorComponents || {});
     const bodyMarkdownField = {
@@ -497,6 +502,7 @@ class CmsConfig {
         // "eleventyImage",
         "imageShortcode",
         "partial",
+        "htmlPartial",
         "wrapper",
         "section",
         "links",
@@ -882,6 +888,10 @@ class CmsConfig {
                   label: "Name",
                   widget: "string",
                   required: true,
+                  pattern: [
+                    "^[a-zA-Z0-9-]+$",
+                    "Only letters, numbers, and hyphens are allowed",
+                  ],
                 },
                 {
                   name: "value",
@@ -912,24 +922,116 @@ class CmsConfig {
                 // prettier-ignore
                 { name: "text", label: "Text Color", ...brandColorField, required: true }, // prettier-ignore
                 { name: "bg", label: "Background Color", ...brandColorField, required: true }, // prettier-ignore
+                { name: "accent", label: "Accent Color", ...brandColorField }, // prettier-ignore
                 { name: "border", label: "Border Color", ...brandColorField }, // prettier-ignore
-                { name: "outline", label: "Outline Color", ...brandColorField }, // prettier-ignore
                 { name: "text-decoration", label: "Text Decoration Color", ...brandColorField }, // prettier-ignore
-                { name: "text--marker", label: "Text Marker Color", ...brandColorField }, // prettier-ignore
-                { name: "text-emphasis", label: "Text Emphasis Color", ...brandColorField }, // prettier-ignore
-                { name: "text--selection", label: "Text Selection Color", ...brandColorField }, // prettier-ignore
-                { name: "bg--selection", label: "Background Selection Color", ...brandColorField }, // prettier-ignore
-                { name: "shadow", label: "Shadow Color", ...brandColorField }, // prettier-ignore
-                { name: "caret", label: "Caret Color", ...brandColorField }, // prettier-ignore
-                { name: "column-rule", label: "Column Rule Color", ...brandColorField }, // prettier-ignore
-                { name: "fill", label: "Fill Color", ...brandColorField }, // prettier-ignore
-                { name: "stroke", label: "Stroke Color", ...brandColorField }, // prettier-ignore
-                { name: "outline--focus", label: "Outline Focus Color", ...brandColorField }, // prettier-ignore
+                { name: "text--marker", label: "Text Marker Color (bullet points, etc.)", ...brandColorField }, // prettier-ignore
+                // prettier-ignore
+                {
+                  name: "advancedDefaults", label: "Advanced Defaults", widget: "object", collapsed: "auto", required: false, fields: [
+                    { name: "outline", label: "Outline Color", ...brandColorField }, // prettier-ignore
+                    { name: "shadow", label: "Shadow Color", ...brandColorField }, // prettier-ignore
+                    { name: "caret", label: "Caret Color", ...brandColorField }, // prettier-ignore
+                    { name: "column-rule", label: "Column Rule Color", ...brandColorField }, // prettier-ignore
+                    { name: "outline--focus", label: "Outline Focus Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
+                // prettier-ignore
+                {
+                  name: "selection", label: "Selected Text", widget: "object", collapsed: "auto", required: false, fields: [ // prettier-ignore
+                    { name: "text--selection", label: "Text Selection Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg--selection", label: "Background Selection Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
+                // prettier-ignore
+                {
+                  name: "strong", label: "Strong (Bold text using the <strong> tag)", widget: "object", collapsed: "auto", required: false, fields: [
+                    { name: "text__strong", label: "Bold Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__strong", label: "Bold Background Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
+                // prettier-ignore
+                {
+                  name: "em", label: "Emphasis (Italic text using the <em> tag)", widget: "object", collapsed: "auto", required: false, fields: [
+                    { name: "text__em", label: "Italic Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__em", label: "Italic Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "text-emphasis", label: "Emphasis symbol Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
+                // prettier-ignore
+                {
+                  name: "mark", label: "Highlighted Text (using the <mark> tag)", widget: "object", collapsed: "auto", required: false, fields: [
+                    { name: "text__mark", label: "Highlighted Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__mark", label: "Highlighted Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "border__mark", label: "Highlighted Border Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
+                // prettier-ignore
+                {
+                  name: "b", label: "Visually important text (using the <b> tag)", widget: "object", collapsed: "auto", required: false, fields: [
+                    { name: "text__b", label: "Visually important Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__b", label: "Visually important Background Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
+                // prettier-ignore
+                {
+                  name: "heading", label: "Heading", widget: "object", collapsed: "auto", required: false, fields: [
+                    { name: "text__heading", label: "Heading Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__heading", label: "Heading Background Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
+                // prettier-ignore
+                {
+                  name: "a", label: "Link (using the <a> tag)", widget: "object", collapsed: "auto", required: false, fields: [
+                    { name: "text__a", label: "Link Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__a", label: "Link Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__a--hover", label: "Link Text Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__a--hover", label: "Link Background Hover Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
+                // prettier-ignore
+                {
+                  name: "button", label: "Button", widget: "object", collapsed: "auto", required: false, fields: [
+                    { name: "text__button", label: "Button Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__button", label: "Button Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "border__button", label: "Button Border Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__button--hover", label: "Button Text Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__button--hover", label: "Button Background Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "border__button--hover", label: "Button Border Hover Color", ...brandColorField }, // prettier-ignore
+                    { name: "text__button--disabled", label: "Button Text Disabled Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__button--disabled", label: "Button Background Disabled Color", ...brandColorField }, // prettier-ignore
+                    { name: "border__button--disabled", label: "Button Border Disabled Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
+                // prettier-ignore
+                {
+                  name: "code", label: "Code (using tags such as code, kbd, pre, samp)", widget: "object", collapsed: "auto", required: false, fields: [
+                    { name: "text__code", label: "Code Text Color", ...brandColorField }, // prettier-ignore
+                    { name: "bg__code", label: "Code Background Color", ...brandColorField }, // prettier-ignore
+                    { name: "border__code", label: "Code Border Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
+                // prettier-ignore
+                {
+                  name: "svg", label: "Default SVG & icon", widget: "object", collapsed: "auto", required: false, fields: [
+                    { name: "fill", label: "Fill Color", ...brandColorField }, // prettier-ignore
+                    { name: "stroke", label: "Stroke Color", ...brandColorField }, // prettier-ignore
+                    { name: "icon-fill", label: "Icon Fill Color", ...brandColorField }, // prettier-ignore
+                    { name: "icon-stroke", label: "Icon Stroke Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
+                // prettier-ignore
+                {
+                  name: "scrollbar", label: "Scroll Bar ", widget: "object", collapsed: "auto", required: false, fields: [
+                    { name: "track-color", label: "Scrollbar Track Color", ...brandColorField }, // prettier-ignore
+                    { name: "thumb-color", label: "Scrollbar Thumb Color", ...brandColorField }, // prettier-ignore
+                  ]
+                },
                 {
                   name: "advanced",
-                  label: "Advanced Options",
+                  label: "Legacy options [DO NOT USE] (Deprecated)",
                   widget: "object",
-                  collapsed: "auto",
+                  collapsed: true,
                   required: false,
                   fields: [
                     { name: "text__heading", label: "Heading Text Color", ...brandColorField }, // prettier-ignore
@@ -942,8 +1044,6 @@ class CmsConfig {
                     { name: "bg__button", label: "Button Background Color", ...brandColorField }, // prettier-ignore
                     { name: "text__button--hover", label: "Button Text Hover Color", ...brandColorField }, // prettier-ignore
                     { name: "bg__button--hover", label: "Button Background Hover Color", ...brandColorField }, // prettier-ignore
-                    { name: "text__button--disabled", label: "Button Text Disabled Color", ...brandColorField }, // prettier-ignore
-                    { name: "bg__button--disabled", label: "Button Background Disabled Color", ...brandColorField }, // prettier-ignore
                     { name: "text__button--disabled", label: "Button Text Disabled Color", ...brandColorField }, // prettier-ignore
                     { name: "bg__button--disabled", label: "Button Background Disabled Color", ...brandColorField }, // prettier-ignore
                     { name: "icon-fill", label: "Icon Fill Color", ...brandColorField }, // prettier-ignore
@@ -1000,7 +1100,7 @@ class CmsConfig {
       icon: "css",
       folder: `${CONTENT_DIR}/_styles`,
       extension: "css",
-      format: "yaml-frontmatter",
+      format: undefined,
       create: true,
       // MEDIAS
       media_folder: `/${CONTENT_DIR}/_images`,
@@ -1110,7 +1210,16 @@ class CmsConfig {
           file: `${CONTENT_DIR}/_data/none.yaml`,
           media_folder: `/${CONTENT_DIR}/_data`,
           public_folder: "/_data",
-          fields: [],
+          fields: [
+            {
+              label: "Notice",
+              name: "notice",
+              widget: "boolean",
+              default: false,
+              readonly: true,
+              before_input: `See the [dedicated assets directory](/admin/#/assets/_content/_data) to manage and edit advanced data files.`,
+            },
+          ],
         },
         {
           name: "publicFiles",
@@ -1118,8 +1227,17 @@ class CmsConfig {
           icon: "attach_file",
           file: `${CONTENT_DIR}/_files/none.yaml`,
           media_folder: `/${CONTENT_DIR}/_files`,
-          public_folder: "/_files",
-          fields: [],
+          public_folder: "/assets/files",
+          fields: [
+            {
+              label: "Notice",
+              name: "notice",
+              widget: "boolean",
+              default: false,
+              readonly: true,
+              before_input: `See the [dedicated assets directory](/admin/#/assets/_content/_files) to manage public files.`,
+            },
+          ],
         },
       ],
     };
@@ -1132,8 +1250,8 @@ class CmsConfig {
       slug: "{{fields._slug}}",
       icon: "edit_document",
       folder: `${CONTENT_DIR}/_layouts`,
+      format: undefined,
       extension: "njk",
-      format: "yaml-frontmatter",
       create: true,
       // MEDIAS
       media_folder: `/${CONTENT_DIR}/_images`,
@@ -1184,8 +1302,8 @@ class CmsConfig {
       slug: "{{fields._slug}}",
       icon: "slide_library",
       folder: `${CONTENT_DIR}/_partials`,
+      format: undefined,
       extension: "njk",
-      format: "yaml-frontmatter",
       create: true,
       // MEDIAS
       media_folder: `/${CONTENT_DIR}/_images`,
@@ -1256,6 +1374,26 @@ class CmsConfig {
           // required: false,
           // output_code_only: true,
           // allow_language_selection: false,
+        },
+      ],
+    };
+    const htmlPartialsCollection = {
+      ...partialsCollection,
+      name: "htmlPartials",
+      label: "Partials (HTML)",
+      label_singular: "Partial (HTML)",
+      icon: "code_blocks",
+      format: undefined,
+      extension: "njk",
+      fields: [
+        {
+          name: "body",
+          label: "Content",
+          required: false,
+          widget: "code",
+          output_code_only: true,
+          allow_language_selection: false,
+          language: "html",
         },
       ],
     };
@@ -1600,8 +1738,8 @@ class CmsConfig {
               raster_image: {
                 format: "webp",
                 quality: 98,
-                width: 2048,
-                height: 2048,
+                width: 5000,
+                height: 5000,
               },
               svg: {
                 optimize: true,
@@ -1634,6 +1772,7 @@ class CmsConfig {
               ...selectedOptionalCollections,
               { divider: true },
               partialsCollection,
+              htmlPartialsCollection,
               pageLayoutsCollection,
               sectionLayoutsCollection,
               { divider: true },
@@ -1644,7 +1783,7 @@ class CmsConfig {
               advancedDataFilesCollection,
               {
                 divider: Boolean(
-                  !mustSetup && data.userConfig.collections?.length
+                  !mustSetup && data.userConfig.collections?.length,
                 ),
               },
               ...data.userConfig.collections,
@@ -1677,7 +1816,9 @@ export default async function (eleventyConfig, pluginOptions) {
       ...uc,
     };
   } catch (error) {
-    console.error("Could not import user config\n", error);
+    console.warn(
+      `WARN: Could not import user config from "${WORKING_DIR_ABSOLUTE}/_config/index.js"`,
+    );
   }
 
   eleventyConfig.addTemplate("admin/config.11ty.js", CmsConfig, { userConfig });

@@ -1,7 +1,7 @@
-import { USER_DIR, languages } from "../../env.config.js";
+import { USER_DIR, allLanguages } from "../../env.config.js";
 
 const dirsToStrip = [USER_DIR, "pages"];
-const langCodes = languages.map((lang) => lang.code);
+const langCodes = allLanguages.map((lang) => lang.code);
 // const stripRegex = new RegExp(`^\/*(${dirsToStrip.join("|")})\/*`);
 
 // NOTE: Keep lang prefixes but strip undesirable path segments like "pages" or "_user-content"
@@ -19,7 +19,7 @@ function stripPathSegment(path, segmentToStrip, allowedPrefixes = []) {
   return strippedPath;
 }
 
-const languagePrefixesMap = languages
+const languagePrefixesMap = allLanguages
   .map((lang) => {
     if (typeof lang.customPrefix === "string") {
       return [lang.defaultPrefixRegex, lang.customPrefix];
@@ -27,7 +27,7 @@ const languagePrefixesMap = languages
   })
   .filter(Boolean);
 
-// for (const lang of globalSettings.languages) {
+// for (const lang of globalSettings.allLanguages) {
 //   if (lang.customUrlPrefix) {
 //     languagePrefixesToMap[lang.code] = lang.customUrlPrefix.prefix;
 //   }

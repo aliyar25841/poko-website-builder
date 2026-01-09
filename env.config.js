@@ -26,8 +26,6 @@ export const CMS_IMPORT = processEnv.CMS_IMPORT || "npm";
 // DIRECTORIES
 // Output directory
 export const OUTPUT_DIR = processEnv.OUTPUT_DIR || "dist";
-// Cache directory
-export const CACHE_DIR = processEnv.CACHE_DIR || ".cache";
 // Files output directory
 export const FILES_OUTPUT_DIR = processEnv.FILES_OUTPUT_DIR || "assets/files";
 export const FILES_LIBRARY_OUTPUT_DIR =
@@ -61,15 +59,21 @@ export const USER_DIR = processEnv.USER_DIR || `_user-content`;
 // Detect the current hosting provider used
 export const GITHUB_PAGES_BUILD = processEnv.GITHUB_PAGES === "true";
 export const NETLIFY_BUILD = Boolean(
-  processEnv.NETLIFY || processEnv.NETLIFY_DEPLOYMENT_ID
+  processEnv.NETLIFY || processEnv.NETLIFY_DEPLOYMENT_ID,
 );
 export const CLOUDFLARE_BUILD = Boolean(
-  processEnv.CF_PAGES || processEnv.CLOUDFLARE_ACCOUNT_ID
+  processEnv.CF_PAGES || processEnv.CLOUDFLARE_ACCOUNT_ID,
 );
 export const VERCEL_BUILD = Boolean(processEnv.VERCEL_DEPLOYMENT_ID);
 export const LOCAL_BUILD = Boolean(
-  !NETLIFY_BUILD && !CLOUDFLARE_BUILD && !VERCEL_BUILD
+  !NETLIFY_BUILD && !CLOUDFLARE_BUILD && !VERCEL_BUILD,
 );
+
+// Cache directory
+export const CACHE_DIR =
+  processEnv.CACHE_DIR ||
+  (CLOUDFLARE_BUILD && ".bun/install/cache") ||
+  ".cache";
 
 // const GITHUB_REPO_INFERRED = processEnv.GIT_REMOTES?.split("\n")
 //   ?.find((remote) => remote.includes("github.com"))
@@ -153,7 +157,7 @@ const HOST_BRANCH_URL =
   (processEnv.CF_PAGES_URL &&
     processEnv.CF_PAGES_URL.replace(
       /https:\/\/[a-z\d]+\./,
-      `https://${HOST_SUBDOMAIN}.`
+      `https://${HOST_SUBDOMAIN}.`,
     )) ||
   (processEnv.VERCEL_BRANCH_URL && `https://${processEnv.VERCEL_BRANCH_URL}`) ||
   processEnv.DEPLOY_PRIME_URL || // Netlify
@@ -205,7 +209,7 @@ try {
   const brandConfigYaml = fs.readFileSync(brandConfigPath, "utf-8");
   brandConfig = yaml.load(brandConfigYaml);
 } catch (error) {
-  console.error("Error reading brandConfig.yaml:", error);
+  console.warn("WARN: brandConfig.yaml not found");
   brandConfig = {
     ctxCssImport: { filename: "_ctx.css" },
     widthsContexts: [],
@@ -221,10 +225,10 @@ export const collections = globalSettings?.collections || [];
 export const allLanguages =
   globalSettings?.languages?.map(transformLanguage) || [];
 export const languages = allLanguages.filter(
-  (lang) => !statusesToUnrender.includes(lang.status)
+  (lang) => !statusesToUnrender.includes(lang.status),
 );
 export const defaultLanguage = allLanguages.find(
-  (lang) => lang.isWebsiteDefault
+  (lang) => lang.isWebsiteDefault,
 );
 export const defaultLangCode = defaultLanguage?.code || "en";
 export const unrenderedLanguages = allLanguages
@@ -240,28 +244,28 @@ export const inlineAllStyles =
 
 // Widths contexts
 export const brandWidthsContexts = (brandConfig?.widthsContexts || []).map(
-  transformWidthsContext
+  transformWidthsContext,
 );
 export const brandWidthsContextsStyles = mapStyleStringsToClassDef(
   brandWidthsContexts,
-  ".widths-"
+  ".widths-",
 );
 
 // Font stacks contexts
 export const brandFontStacksContexts = transformFontStacksContexts(
   brandConfig?.fontStacksContexts,
-  brandConfig?.customFontsImport
+  brandConfig?.customFontsImport,
 );
 export const brandFontStacksContextsStyles = mapStyleStringsToClassDef(
   brandFontStacksContexts,
-  ".font-stacks-"
+  ".font-stacks-",
 );
 
 // Type Scale
 export const brandTypeScales = transformTypeScales(brandConfig?.typeScales);
 export const brandTypeScalesStyles = mapStyleStringsToClassDef(
   brandTypeScales,
-  ".type-scale-"
+  ".type-scale-",
 );
 
 // Colors
@@ -272,11 +276,11 @@ export const brandColorsStyles = brandColors
 
 // Palettes
 export const brandPalettes = (brandConfig?.palettes || []).map(
-  transformPalette
+  transformPalette,
 );
 export const brandPalettesStyles = mapStyleStringsToClassDef(
   brandPalettes,
-  ".palette-"
+  ".palette-",
 );
 
 // Style Contexts
@@ -287,12 +291,12 @@ export const brandStyleContexts = compileStyleContexts(
     fontStacksContext: brandFontStacksContexts,
     typeScale: brandTypeScales,
     palette: brandPalettes,
-  }
+  },
 );
 export const brandStyleContextsStyles = mapStyleStringsToClassDef(
   brandStyleContexts,
   ".ctx-",
-  0
+  0,
 );
 
 // Styles to be injected
@@ -314,6 +318,11 @@ export const brandStyles = [
   brandTypeScalesStyles || "",
   brandPalettesStyles || "",
 ].join("\n");
+
+const unoCssConfig = await import(
+  "./src/config-11ty/plugins/plugin-eleventy-unocss/uno.config.js"
+);
+export const fontPreloadTags = unoCssConfig.fontPreloadTags;
 
 // TODO: Import ctx.css
 // Once ctx.css is a proper library, we can import layers individually from node_modules

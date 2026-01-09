@@ -24,12 +24,17 @@ export function transformLink(link) {
             const templateTranslation = p?.data?.templateTranslations?.find(
               (t) => {
                 return t.lang === lang;
-              }
+              },
             );
+            // TODO: Need to populate this with more data (e.g. sort)
             return transformLink.call(self, {
               type: link.type,
-              ogLink: link,
-              page: templateTranslation,
+              linkData: link,
+              ...templateTranslation,
+              // page: {
+              //   ...templateTranslation.page,
+              //   ...templateTranslation,
+              // },
             });
           });
       })
@@ -52,11 +57,11 @@ export function transformLink(link) {
         slug,
         lang,
         "all", // all the 'templateTranslations' fields of that page
-        collectionName
+        collectionName,
       );
       return transformLink.call(self, {
         type: link.type,
-        ogLink: link,
+        linkData: link,
         page: pageMatch,
       });
     });
@@ -166,11 +171,11 @@ export default async function (eleventyConfig, pluginOptions) {
             this,
             itemMarkdownLayout,
             "njk,md",
-            { link: l }
+            { link: l },
           );
 
           return linkStr;
-        })
+        }),
       );
 
       htmlLinks = strings.join("");
@@ -185,7 +190,7 @@ export default async function (eleventyConfig, pluginOptions) {
             });
 
           return linkStr;
-        })
+        }),
       );
       htmlLinks = strings.join("");
     }
@@ -195,7 +200,7 @@ export default async function (eleventyConfig, pluginOptions) {
         this,
         wrapperMarkdownLayout,
         "njk,md",
-        { links: uniqueLinks, htmlLinks }
+        { links: uniqueLinks, htmlLinks },
       );
 
       return rendered;

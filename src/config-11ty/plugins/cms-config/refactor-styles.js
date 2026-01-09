@@ -1670,7 +1670,9 @@ export default async function (eleventyConfig, pluginOptions) {
       ...uc,
     };
   } catch (error) {
-    console.error("Could not import user config\n", error);
+    console.warn(
+      `WARN: Could not import user config from "${WORKING_DIR_ABSOLUTE}/_config/index.js"`
+    );
   }
 
   eleventyConfig.addTemplate("admin/config.11ty.js", CmsConfig, { userConfig });
