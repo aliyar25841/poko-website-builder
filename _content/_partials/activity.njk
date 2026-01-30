@@ -1,0 +1,27 @@
+
+<article class="activity width-max fixed-fluid v--width-fixed:20rem palette-{{color}} palette-low-contrast card">
+  {% image src=image.src, class="rounded-[--radius-card] object-[66%]" %}
+
+  <div class="activity-content prose">
+
+    {{ content | md }}
+
+    <div class="box info-card flow v--flow-space:0.2em palette-{{color}}-contrast card max-inline-[--width-focus]">
+        <p class="with-icon left items-center">{% icon "tabler:calendar-week", width="35", height="35" %} <span>{{ timing }}</span></p>
+        <p class="with-icon left items-center">{% icon "tabler:coin-euro", width="35", height="35" %} <span>{{ pricing }}</span></p>
+        <p class="with-icon left items-center">{% icon "tabler:map-pin", width="35", height="35" %} <span>{{ where }}</span></p>
+        <p class="with-icon left items-center">{% icon "tabler:automation", width="35", height="35" %} <span>{{ practical }}</span></p>
+    </div>
+  </div>
+</article>
+
+{% css %}
+.activity img {
+  margin-block-end: 4rem;
+}
+.info-card {
+  float: left;
+  position: relative;
+  left: -10rem;
+}
+{% endcss %}

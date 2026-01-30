@@ -1,0 +1,92 @@
+/*@import "_ctx.css";*/
+
+@view-transition {
+    navigation: auto;
+}
+
+:root {
+    /* --pi-body: 0; */
+    /*--radius-max: 1rem;*/
+    /*--radius-prose: 1rem;*/
+    /*--radius-focus: 1rem;*/
+    --radius-card: 1rem;
+    /*--radius-button: 1rem;*/
+    --border-width-focus: 5px;
+    --p-card: var(--step-2);
+    --width-focus: calc(var(--width-prose) / 1.618);
+    --margin-section: var(--step-6);
+    --padding-section: var(--step-6);
+    --margin-sub-section: 0;
+    --padding-sub-section: var(--step-4);
+}
+
+main > :is(section, .section) {
+    margin-block: var(--margin-section);
+    padding-block: var(--padding-section);
+    &:first-child {
+        margin-block-start: 0;
+    }
+    &:last-child {
+        margin-block-end: 0;
+    }
+    & + .squashed {
+        position: relative;
+        margin-block: calc(
+            -1 * var(--margin-section) - 0.5 * var(--padding-section)
+        );
+    }
+}
+
+main > :is(section, .section) > :is(section, .section),
+main :is(.sub-section) {
+    margin-block: var(--margin-sub-section);
+    padding-block: var(--padding-sub-section);
+    &:first-child {
+        padding-block-start: 0;
+    }
+    &:last-child {
+        padding-block-end: 0;
+    }
+    & + .squashed {
+        position: relative;
+        margin-block: calc(
+            -1 * var(--margin-sub-section) - 0.5 * var(--padding-sub-section)
+        );
+    }
+}
+
+.squashed {
+    margin-block: calc(
+        -1 * var(--margin-section) - 0.5 * var(--padding-section)
+    );
+}
+
+.palette-low-contrast {
+    --color-bg: hsl(from var(--color-text) h s var(--low-l, 85));
+    &.palette-vermillon,
+    &.palette-orange-peel,
+    &.palette-cooper {
+        --low-l: 95;
+    }
+}
+
+input, textarea {
+    border-radius: var(--radius-card);
+    border: 1px solid currentColor;
+    background-color: var(--White);
+}
+
+:where(a.button, button) {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid currentColor;
+    border-radius: 100vw;
+    padding: 0.5em 1em;
+    padding-inline: min(3em, 4.5vw);
+    max-inline-size: 100%;
+}
+
+.card {
+    border-radius: var(--radius-card);
+    padding: var(--p-card);
+}

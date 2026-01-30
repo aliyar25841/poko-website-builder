@@ -5,7 +5,9 @@ languages:
   - code: fr
     name: Français
     customUrlPrefix:
-      prefix: ''
+      prefix: ""
     status: published
     isCmsDefault: false
     isWebsiteDefault: true
+collections:
+  - articles

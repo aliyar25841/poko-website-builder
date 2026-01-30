@@ -8,22 +8,21 @@ name: Pour qui?
 eleventyNavigation:
   order: 1
 ---
-:::: div
 
-::: div
+{% partialWrapper "page-header.njk", { image: { src: '/_images/pexels-fauxels-3184298.webp' }, class: 'palette-cooper' } %}
 
 # À qui s’adressent nos formations?
 
 Chez Repères, nos formations en promotion de la santé sont conçues pour toutes celles et ceux qui veulent agir sur la santé des personnes et des communautés, en équipe ou individuellement.
 
-:::
+{% endpartialWrapper %}
 
--IMAGE-
+::::: div { .articles .section .palette-cooper-contrast .bleed-bg .v--bleed-bottom:14rem }
+:::: article { .fixed-fluid }
 
-::::
+{% image src="/_images/pexels-fauxels-3184298.webp", width="300", aspectRatio="1" %}
 
--IMAGE-
-
+::: prose
 ## Vous êtes un·e professionnel·le?
 
 Vous travaillez dans le social, la santé ou l’éducation à Bruxelles ou en Wallonie? Nos formations peuvent vous aider à:
@@ -34,7 +33,13 @@ Vous travaillez dans le social, la santé ou l’éducation à Bruxelles ou en W
 
 Exemples de structures où nos participants travaillent souvent: maisons médicales, centres de planning familial, services sociaux, services de santé mentale, hôpitaux, structures jeunesse, CPAS, services d’accompagnement à l’emploi ou d’insertion.
 
--IMAGE-
+:::
+::::
+:::: article { .fixed-fluid }
+
+{% image src="/_images/pexels-fauxels-3184298.webp", width="300", aspectRatio="1" %}
+
+::: prose
 
 ## Vous êtes un relais ou bénévole?
 
@@ -44,8 +49,13 @@ Vous êtes engagé·e dans une association, collectif citoyen ou initiative loca
 - Mobiliser votre communauté et construire des projets participatifs.
 - Rencontrer d’autres relais et bénévoles pour partager expériences et bonnes pratiques.
 
--IMAGE-
+:::
+::::
+:::: article { .fixed-fluid }
 
+{% image src="/_images/pexels-fauxels-3184298.webp", width="300", aspectRatio="1" %}
+
+::: prose
 ## Vous faites partie d’une équipe ou d’une institution?
 
 Nous accompagnons les structures et collectifs qui souhaitent:
@@ -54,7 +64,13 @@ Nous accompagnons les structures et collectifs qui souhaitent:
 - Améliorer le travail collectif et les pratiques internes.
 - Mettre en place des espaces de formation ou de soutien au sein de leur organisation.
 
--IMAGE-
+:::
+::::
+:::: article { .fixed-fluid }
+
+{% image src="/_images/pexels-fauxels-3184298.webp", width="300", aspectRatio="1" %}
+
+::: prose
 
 ## Vous êtes un organisme de formation?
 
@@ -64,7 +80,12 @@ Repères soutient les organismes de formation pour:
 - Échanger sur les pratiques et expériences avec d’autres organismes.
 - Être accompagnés dans leurs questionnements et difficultés en formation.
 
-**__ENCADRÉ_**_
+:::
+::::
+:::::
+<!-- End of articles -->
+
+::: div { .squashed .prose .box .card .palette-burnt-umber .palette-low-contrast }
 
 Pourquoi nous contacter?
 
@@ -74,13 +95,18 @@ Vous nous contactez si vous voulez:
 - Avoir un regard réflexif sur vos pratiques, individuellement ou collectivement.
 - Trouver des supports méthodologiques pour intégrer la promotion de la santé dans vos projets, équipes ou structures.
 
--BOUTON-Nous contacter-
+{% link url="contact", text="Nous contacter", class="button" %} { .text-center }
 
-**__ENCADRÉ_**_
+:::
 
+::::: div { .section .bleed-bg .v--bleed-top:12rem }
+::: hgroup { .text-center }
 ### Nous collaborons avec une grande diversité d’acteurs engagés:
+du soin à la jeunesse, du social à la formation et d’autres… { .h4 }
+:::
 
-du soin à la jeunesse, du social à la formation et d’autres…
+:::: grid-fluid { .sectors .v--columns:3 .gap-0 .m-block-[--step-4] .width-prose .rounded-[--radius-card] .overflow-hidden .font-bold }
+::: prose { .box .p-[--p-card] .palette-orange-peel .palette-low-contrast }
 
 #### Santé & bien-être
 
@@ -88,8 +114,11 @@ du soin à la jeunesse, du social à la formation et d’autres…
 - Centres de planning familial (CPF)
 - Services de santé mentale (SMM)
 - Hôpitaux
-- Services PMS / PSE
+- Services PMS / PSE
 - Services de promotion de la santé
+
+:::
+::: prose { .box .p-[--p-card] .palette-cooper .palette-low-contrast }
 
 #### Accompagnement social & humain
 
@@ -99,14 +128,43 @@ du soin à la jeunesse, du social à la formation et d’autres…
 - Maisons d’accueil et centres d’hébergement
 - Services de cohésion sociale
 
+:::
+::: prose { .box .p-[--p-card] .palette-cooper .palette-low-contrast }
+
 #### Jeunesse, éducation & insertion
 
 - Organismes de jeunesse (AMO)
 - Services d’aide à la jeunesse (SAJ)
-- Organismes d’accompagnement à l’emploi / insertion socioprofessionnelle
+- Organismes d’accompagnement à l’emploi / insertion socioprofessionnelle
 - Services ou organismes de formation
+
+:::
+::: prose { .box .p-[--p-card] .palette-orange-peel .palette-low-contrast }
 
 #### Réseaux & fédérations
 
 - Fédérations de ces secteurs
 - Autres structures partenaires et acteurs associatifs
+
+:::
+::::
+:::::
+
+
+{% css %}
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--step-4);
+}
+article.fixed-fluid {
+  align-items: center;
+  max-inline-size: var(--width-max);
+}
+article.fixed-fluid img {
+  border-radius: 100%;
+}
+.sectors > div {
+  inline-size: 100%;
+}
+{% endcss %}

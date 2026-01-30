@@ -1,21 +1,39 @@
 ctxCssImport:
-  filename: ctx.css
+  filename: _ctx.css
 inlineAllStyles: true
 widthsContexts:
   - name: main
     max: 80rem
     prose: 50rem
 fontStacksContexts:
-  - name: font-family-Rounded-Sans
+  - name: main
     body:
       native: rounded-sans
-      custom: ''
+      custom: Quicksand
     heading:
       native: rounded-sans
-      custom: ''
+      custom: Quicksand
     code:
       native: monospace-code
-      custom: ''
+customFontsImport:
+  - name: Quicksand
+    source:
+      type: fontsource
+      name: Quicksand
+      weights:
+        - '400'
+        - '500'
+        - '600'
+        - '700'
+        - '100'
+        - '200'
+        - '300'
+        - '800'
+        - '900'
+      styles:
+        - normal
+      subsets:
+        - latin
 typeScales:
   - name: main
     minFontSize: 18
@@ -44,13 +62,10 @@ colors:
   - name: White
     value: '#ffffff'
 palettes:
-  - name: gray-white
+  - name: gray
     text: Gray
     bg: White
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -60,14 +75,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: gray-white-contrast
+  - name: gray-contrast
     text: White
     bg: Gray
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -77,14 +88,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: Delft_blue-white
+  - name: delft-blue
     text: Delft-Blue
     bg: White
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -94,14 +101,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: Delft_blue-white-contrast
+  - name: delft-blue-contrast
     text: White
     bg: Delft-Blue
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -111,14 +114,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: cooper-white
+  - name: cooper
     text: Cooper
     bg: White
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -128,14 +127,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: cooper-white-contrast
+  - name: cooper-contrast
     text: White
     bg: Cooper
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -145,14 +140,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: burnt_umber-white
+  - name: burnt-umber
     text: Burnt-umber
     bg: White
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -162,14 +153,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: burnt_umber-white-contrast
+  - name: burnt-umber-contrast
     text: White
     bg: Burnt-umber
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -179,14 +166,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: vermillon-white
+  - name: vermillon
     text: Vermillon
     bg: White
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -196,14 +179,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: vermillon-white-contrast
+  - name: vermillon-contrast
     text: White
     bg: Vermillon
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -213,14 +192,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: YlnMn-blue-white
+  - name: ylnMn-blue
     text: YlnMn-Blue
     bg: White
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -230,14 +205,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: YlnMn-blue-white-contrast
+  - name: ylnMn-blue-contrast
     text: White
     bg: YlnMn-Blue
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -247,14 +218,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: orange-peel-white
+  - name: orange-peel
     text: Orange-peel
     bg: White
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -264,14 +231,10 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
-  - name: orange-peel-white-contrast
+  - name: orange-peel-contrast
     text: White
     bg: Orange-peel
-    border: ''
     outline: ''
-    text-decoration: ''
-    text--marker: ''
     text-emphasis: ''
     text--selection: ''
     bg--selection: ''
@@ -281,7 +244,6 @@ palettes:
     fill: ''
     stroke: ''
     outline--focus: ''
-    advanced: null
 styleContexts:
   - name: main
     value: ctx

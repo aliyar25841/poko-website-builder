@@ -1,0 +1,31 @@
+<header class="page-header section {{ class }}">
+<div class="page-header--content">
+{{ content | md }}
+</div>
+{% image src=image.src, class="page-header--image" %}
+</header>
+
+{% css %}
+.page-header {
+  display: grid;
+  grid-template-columns: auto;
+  align-items: flex-end;
+  gap: 1em;
+  margin-block: var(--step-6);
+  & > img {
+    aspect-ratio: 2;
+  }
+
+  @media (min-width: 50rem) {
+    & {
+      margin-inline-end: calc(-1 * var(--pi-body));
+      grid-template-columns: 1fr 1fr;
+    }
+    & > img {
+      aspect-ratio: 1;
+      border-radius: var(--radius-card) 0 0 var(--radius-card);
+    }
+  }
+
+}
+{% endcss %}
