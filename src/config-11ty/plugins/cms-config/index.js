@@ -470,28 +470,31 @@ class CmsConfig {
     const fontsourceFonts = (data.fontServices?.fontsource?.fonts || []).map(
       ({ family: value }) => ({ value, label: value }),
     );
-    let defaultEditorComponents;
+
+    let defaultEditorComponentNames = [];
+    let userEditorComponentNames = [];
+
     try {
-      defaultEditorComponents = await import(
-        "../../../content-static/admin/defaultEditorComponents.js"
-      );
+      const path = "./src/content-static/admin/defaultEditorComponents.js";
+      const code = await Bun.file(path).text();
+      // Regex to find 'export const name', 'export function name', etc.
+      defaultEditorComponentNames = [...code.matchAll(/^export\s+(?:const|let|var|function|class)\s+(\w+)/mg)]
+        .map(match => match[1]);
     } catch (error) {
-      console.error("Failed to import default Editor Components\n", error);
+      console.error("Failed to retrieve default Editor Components\n", error);
     }
-    let userEditorComponents;
     try {
-      userEditorComponents = await import(
-        `${WORKING_DIR_ABSOLUTE}/_config/editorComponents.js`
-      );
+      const path = `${WORKING_DIR_ABSOLUTE}/_config/editorComponents.js`;
+      const code = await Bun.file(path).text();
+      // Regex to find 'export const name', 'export function name', etc.
+      userEditorComponentNames = [...code.matchAll(/^export\s+(?:const|let|var|function|class)\s+(\w+)/mg)]
+        .map(match => match[1]);
     } catch (error) {
       console.warn(
         `INFO: No user's Editor Components found at "${WORKING_DIR_ABSOLUTE}/_config/editorComponents.js"`,
       );
     }
-    const defaultEditorComponentNames = Object.keys(
-      defaultEditorComponents || {},
-    );
-    const userEditorComponentNames = Object.keys(userEditorComponents || {});
+
     const bodyMarkdownField = {
       name: "body",
       label: "Content",
@@ -499,17 +502,46 @@ class CmsConfig {
       required: false,
       i18n: true,
       editor_components: [
-        // "eleventyImage",
-        "imageShortcode",
-        "partial",
-        "htmlPartial",
-        "wrapper",
-        "section",
-        "links",
+        // "eleventyImage", // Removed
+        // "imageShortcode",
+        // "partial",
+        // "htmlPartial",
+        // "wrapper",
+        // "section",
+        // "links",
         ...defaultEditorComponentNames,
         ...userEditorComponentNames,
       ],
     };
+    const commonPageFields = [
+      {
+        name: "name",
+        label: "Name",
+        widget: "string",
+        required: true,
+        i18n: true,
+        // PERSON had ...
+        // i18n: "duplicate",
+      },
+      // {
+      //   name: "currentSlug",
+      //   label: "Current slug",
+      //   widget: "compute",
+      //   value: "{{fields.name}}",
+      //   i18n: true,
+      // },
+      // { name: "path", label: "Page URL path", widget: "string", required: true, pattern: ['^(?![\s\/\-]*$)(?!\/)[a-z0-9\/\-]*[a-z0-9\-]$', "URL must contain only letters, numbers, dashes, and forward slashes (not starting or ending with a slash or dash), and at least one letter or number"], hint: "URL-friendly slug or path (may contain '/' and '-'). NOTE: The homepage must be called 'index'"},
+      bodyMarkdownField,
+      eleventyNavigationField,
+      simpleMetadataField,
+      pagePreviewField,
+      tagsField,
+      statusField,
+      pageLayoutRelationField,
+      generatePageField,
+      varsField,
+      dataListField,
+    ];
 
     const globalSettingsSingleton = {
       name: "globalSettings",
@@ -1479,42 +1511,7 @@ class CmsConfig {
     //   public_folder: "/_images",
     //   fields: sectionFields,
     // };
-    const pageFields = [
-      ...commonCollectionFields,
-      // { name: 'collection', label: 'Collection', widget: 'object', types: [
-      //   { name: 'pages', label: 'Pages', widget: 'object', fields: [
-      //     { name: 'pages', label: 'Pages', widget: 'relation', collection: 'pages' },
-      //   ]},
-      //   { name: 'articles', label: 'Articles', widget: 'object', fields: [
-      //     { name: 'articles', label: 'Articles', widget: 'relation', collection: 'articles' },
-      //   ]},
-      // ]},
-      statusField,
-      generatePageField,
-      pageLayoutRelationField,
-      {
-        name: "name",
-        label: "Page Name",
-        widget: "string",
-        required: true,
-        i18n: true,
-      },
-      // {
-      //   name: "currentSlug",
-      //   label: "Current slug",
-      //   widget: "compute",
-      //   value: "{{fields.name}}",
-      //   i18n: true,
-      // },
-      // { name: "path", label: "Page URL path", widget: "string", required: true, pattern: ['^(?![\s\/\-]*$)(?!\/)[a-z0-9\/\-]*[a-z0-9\-]$', "URL must contain only letters, numbers, dashes, and forward slashes (not starting or ending with a slash or dash), and at least one letter or number"], hint: "URL-friendly slug or path (may contain '/' and '-'). NOTE: The homepage must be called 'index'"},
-      bodyMarkdownField,
-      eleventyNavigationField,
-      simpleMetadataField,
-      pagePreviewField,
-      tagsField,
-      varsField,
-      dataListField,
-    ];
+    const pageFields = [...commonCollectionFields, ...commonPageFields];
     const pagesCollection = {
       ...mostCommonMarkdownCollectionConfig,
       name: "pages",
@@ -1568,26 +1565,7 @@ class CmsConfig {
         ],
       },
     };
-    const articleFields = [
-      ...commonCollectionFields,
-      statusField,
-      generatePageField,
-      pageLayoutRelationField,
-      {
-        name: "name",
-        label: "Article Name",
-        widget: "string",
-        required: true,
-        i18n: true,
-      },
-      bodyMarkdownField,
-      eleventyNavigationField,
-      simpleMetadataField,
-      pagePreviewField,
-      tagsField,
-      varsField,
-      dataListField,
-    ];
+    const articleFields = [...commonCollectionFields, ...commonPageFields];
     const articlesCollection = {
       ...mostCommonMarkdownCollectionConfig,
       // icon: "article",
@@ -1601,26 +1579,7 @@ class CmsConfig {
       public_folder: "/_images",
       fields: articleFields,
     };
-    const personFields = [
-      ...commonCollectionFields,
-      statusField,
-      generatePageField,
-      pageLayoutRelationField,
-      {
-        name: "name",
-        label: "Name",
-        widget: "string",
-        required: true,
-        i18n: "duplicate",
-      },
-      bodyMarkdownField,
-      eleventyNavigationField,
-      simpleMetadataField,
-      pagePreviewField,
-      tagsField,
-      varsField,
-      dataListField,
-    ];
+    const personFields = [...commonCollectionFields, ...commonPageFields];
     const peopleCollection = {
       ...mostCommonMarkdownCollectionConfig,
       // icon: "article",
@@ -1729,7 +1688,7 @@ class CmsConfig {
       media_folder: `/${CONTENT_DIR}/_images`,
       public_folder: "/_images",
       media_libraries: {
-        stock_assets: { providers: [] },
+        // stock_assets: { providers: [] },
         default: {
           config: {
             slugify_filename: true, // default: false
