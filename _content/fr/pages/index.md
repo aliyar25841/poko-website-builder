@@ -8,24 +8,13 @@ name: index
 eleventyNavigation:
   order: 0
 ---
-17.10.2025 - 09.08.2026
-
-# FLIGHT
-
-L'exposition qui vous
-donne des ailes.
+{% section type="cover", vars={"minHeight":"100dvh","noPadding":false,"gap":"","class":""}, blocks=[{"value":"17.10.2025 - 09.08.2026\n\n# FLIGHT\n\nL'exposition qui vous\ndonne des ailes.","type":"markdown"}], advanced={} %}
 
 Découverte
 
 ## L'air en mouvement
 
-Depuis la nuit des temps, l'homme rêve de s'arracher à la gravité.
-
-Mais la nature l'a fait des millions d'années avant nous.
-
-Le Musée des Sciences Naturelles vous invite à décrypter les secrets du vol. À travers une scénographie immersive rassemblant .
-
- explore les liens fascinants entre la biologie et l'aéronautique. De l'insecte au drone, comprenez comment l'évolution a façonné les maîtres du ciel.
+{% section type="fixed-fluid", vars={"widthFixed":"","widthFluidMin":"2/3","fixedRight":false,"gap":"1rem","class":""}, blocks=[{"value":"Depuis la nuit des temps, l'homme rêve de s'arracher à la gravité.\n\nMais la nature l'a fait des millions d'années avant nous.","type":"markdown"},{"value":"Le Musée des Sciences Naturelles vous invite à décrypter les secrets du vol. À travers une scénographie immersive rassemblant plus de **350 specimens**.\n\n **FLIGHT** explore les liens fascinants entre la biologie et l'aéronautique. De l'insecte au drone, comprenez comment l'évolution a façonné les maîtres du ciel.","type":"markdown"}], advanced={} %}
 
 ### Date de l'exposition
 
@@ -37,33 +26,4 @@ Visite
 
 ## Infos pratiques
 
-### Horaires
-
-Mardi — Vendredi
-
-09:30 — 17:00
-
-Samedi — Dimanche
-
-10:00 — 18:00
-
-Lundi
-
-Le musée sera fermé les 25 décembre 2025 et 1er Janvier 2026. Les 24 et 31 décembre, le musée fermera exceptionnellement à 15h (dernières entrées à 13h30).
-
-[Réserver mon ticket](https://ticket.naturalsciences.be/fr/accueil.html)
-
-### Adresse
-
-Musée des Sciences Naturelles
-
-Rue Vautier 29,
-1000 Bruxelles
-
-Venir en transport
-
-Gare du Luxembourg 
-
-Bus 38, 80, 95 
-
-[Ouvrir dans Google Maps](https://maps.app.goo.gl/shnUGsCruxLS5Zx2A)
+{% section type="grid-fluid", vars={"columns":null,"gap":"","class":""}, blocks=[{"value":"### Horaires\n\n- Mardi — Vendredi 09:30 — 17:00\n- Samedi — Dimanche 10:00 — 18:00\n- Lundi ouvert/fermé\n\nLe musée sera fermé les 25 décembre 2025 et 1er Janvier 2026. Les 24 et 31 décembre, le musée fermera exceptionnellement à 15h (dernières entrées à 13h30).","type":"markdown"},{"value":"### Adresse\n\nMusée des Sciences Naturelles\n\nRue Vautier 29,\n1000 Bruxelles\n\nVenir en transport\n\nGare du Luxembourg (5 min à pied)\n\nBus 38, 80, 95 (Arrêt Idalie)\n/n[Ouvrir dans Google Maps](https://maps.app.goo.gl/shnUGsCruxLS5Zx2A)","type":"markdown"}], advanced={} %}
