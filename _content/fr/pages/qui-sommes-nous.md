@@ -7,9 +7,7 @@ localizationKey: 059b45dca2ca
 name: Qui sommes-nous?
 eleventyNavigation:
   order: 0
-vars: {}
 ---
-
 {% partialWrapper "page-header.njk", { image: { src: '/_images/6d5a62235cdb6bd5c0150f8e6d800280.webp' } } %}
 
 # Qui sommes-nous?
@@ -142,11 +140,15 @@ Cette diversité enrichit nos formations grâce à la mise en commun des expéri
 -PHOTOS + NOMS + FONCTIONS membre de l'équipe-
 
 - **Caroline Lejeune**
+Formatrice
 - **Dominique Werbrouck**
+Formatrice
 - **Jeanne Reyre**
+**?**
 - **Manoë Jacquet**
-coordinatrice
+Coordinatrice - Formatrice
 - **Pascal Kayaert**
+Formateur
 
 ### Notre gouvernance
 
