@@ -42,8 +42,12 @@ colors:
     value: '#0e79fe'
   - name: noir
     value: '#010101'
-  - name: blanc
+  - name: creme
     value: '#fcfbf8'
+  - name: blanc
+    value: '#ffffff'
+  - name: gris
+    value: '#e7e5e3'
 palettes:
   - name: main
     text: noir
