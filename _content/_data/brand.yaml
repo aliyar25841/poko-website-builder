@@ -40,6 +40,8 @@ colors:
     value: '#fc7e25'
   - name: bleu
     value: '#0e79fe'
+  - name: noir
+    value: '#000000'
 styleContexts:
   - name: main
     value: ctx
