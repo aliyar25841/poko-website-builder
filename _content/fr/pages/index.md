@@ -10,11 +10,11 @@ eleventyNavigation:
 ---
 {% section type="cover", vars={"minHeight":"100dvh","noPadding":false,"gap":"","class":"flight-hero"}, blocks=[{"value":"17.10.2025 - 09.08.2026\n\n# FLIGHT\n\nL'exposition qui vous\ndonne des ailes.","type":"markdown"}], advanced={} %}
 
-Découverte
+Découverte {.flight-label}
 
-## L'air en mouvement
+## L'air en mouvement {.flight-h2}
 
-{% section type="fixed-fluid", vars={"widthFixed":"","widthFluidMin":"2/3","fixedRight":false,"gap":"1rem","class":""}, blocks=[{"value":"Depuis la nuit des temps, l'homme rêve de s'arracher à la gravité.\n\nMais la nature l'a fait des millions d'années avant nous.","type":"markdown","class":"flight-quote-box"},{"value":"Le Musée des Sciences Naturelles vous invite à décrypter les secrets du vol. À travers une scénographie immersive rassemblant plus de **350 specimens**.\n\n **FLIGHT** explore les liens fascinants entre la biologie et l'aéronautique. De l'insecte au drone, comprenez comment l'évolution a façonné les maîtres du ciel.\n\n::: div\n\n### Date de l'exposition\n\n17 Octobre 2025\n\n20 Juin 2026\n\nVisite\n\n:::","type":"markdown","class":"flight-card"}], advanced=null %}
+{% section type="fixed-fluid", vars={"widthFixed":"","widthFluidMin":"2/3","fixedRight":false,"gap":"1rem","class":""}, blocks=[{"value":"Depuis la nuit des temps, l'homme rêve de s'arracher à la gravité.\n\nMais la nature l'a fait des millions d'années avant nous.","type":"markdown","class":"flight-quote-box"},{"value":"Le Musée des Sciences Naturelles vous invite à décrypter les secrets du vol. À travers une scénographie immersive rassemblant plus de **350 specimens**.\n\n **FLIGHT** explore les liens fascinants entre la biologie et l'aéronautique. De l'insecte au drone, comprenez comment l'évolution a façonné les maîtres du ciel.\n\n::: div\n\n### Date de l'exposition\n\n17 Octobre 2025\n\n20 Juin 2026\n\nVisite\n\n:::","type":"markdown","class":"flight-card"}], advanced={} %}
 
 ### 
 
