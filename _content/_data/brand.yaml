@@ -47,14 +47,18 @@ colors:
 palettes:
   - name: main
     text: noir
-    bg: orange
-    accent: bleu
+    bg: blanc
+    accent: orange
     border: ''
     text-decoration: ''
     text--marker: ''
     advancedDefaults: null
-    selection: null
-    strong: null
+    selection:
+      text--selection: blanc
+      bg--selection: orange
+    strong:
+      text__strong: orange
+      bg__strong: ''
     em: null
     mark: null
     b: null
