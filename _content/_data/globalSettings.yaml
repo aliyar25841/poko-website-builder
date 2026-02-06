@@ -1,0 +1,9 @@
+siteName: aliyarPoko
+productionUrl: https://poko-website-builder-57b.pages.dev
+languages:
+  - code: fr
+    name: français
+    customUrlPrefix: null
+    status: published
+    isCmsDefault: false
+    isWebsiteDefault: false
