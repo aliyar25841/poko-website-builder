@@ -8,11 +8,12 @@ name: Accueil
 eleventyNavigation:
   order: 0
 ---
-
 {% partialWrapper "page-header.njk", { image: { src:'/_images/pexels-rethaferguson-3810762.webp', aspectRatio:'1' } } %}
 
 {% image src="/_images/reperes-asbl-logo-sans-bords-rvb-01.webp", alt="Repères ASBL", width="200" %}
+
 button
+
 # Centre de formation à la promotion de la santé
 
 Et si la santé était avant tout une manière de vivre et de se relier aux autres?
@@ -21,6 +22,7 @@ Chez Repères, nous formons celles et ceux qui font vivre la promotion de la san
 {% endpartialWrapper %}
 
 ::::: div { .section .palette-vermillon .palette-low-contrast .flow .v--flow-space:--step-2 .bleed-bg .v--bleed-bottom:20rem }
+
 ## Notre offre de formations et d’accompagnements
 
 :::: switcher { .width-prose .text-center }
@@ -68,6 +70,7 @@ Depuis 2018, dans le cadre du nouveau décret de Promotion de la Santé mis en p
 
 :::: div { .section .palette-YlnMn-blue .flow .text-center }
 ::: hgroup
+
 ## Nous collaborons avec une grande diversité d’acteurs engagés:
 
 du soin à la jeunesse, du social à la formation et d’autres… { .h4 }
@@ -82,4 +85,4 @@ du soin à la jeunesse, du social à la formation et d’autres… { .h4 }
 > «Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy»
 > Nom - organisation
 
--BOUTON-Newsletter-
+-BOUTON - Newsletter-
