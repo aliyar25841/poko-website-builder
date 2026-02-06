@@ -45,7 +45,7 @@
   background-color: var(--flight-white);
   padding: 1.5rem;
   border-radius: 1rem;
-  border: 1px solid var(--flight-gray);
+  border: 1px solid var(--flight-text-dim);
 }
 
 /* Sections */
