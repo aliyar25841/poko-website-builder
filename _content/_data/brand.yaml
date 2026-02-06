@@ -35,6 +35,9 @@ typeScales:
     maxFontSize: 20
     minTypeScale: 1.2
     maxTypeScale: 1.25
+colors:
+  - name: orange
+    value: '#c028bb'
 styleContexts:
   - name: main
     value: ctx
