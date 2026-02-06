@@ -51,7 +51,7 @@ colors:
 palettes:
   - name: main
     text: noir
-    bg: blanc
+    bg: creme
     accent: orange
     border: gris
     text-decoration: ''
