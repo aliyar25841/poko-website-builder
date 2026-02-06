@@ -53,7 +53,7 @@ palettes:
     text: noir
     bg: blanc
     accent: orange
-    border: ''
+    border: gris
     text-decoration: ''
     text--marker: ''
     advancedDefaults: null
@@ -68,7 +68,16 @@ palettes:
     b: null
     heading: null
     a: null
-    button: null
+    button:
+      text__button: blanc
+      bg__button: orange
+      border__button: ''
+      text__button--hover: ''
+      bg__button--hover: ''
+      border__button--hover: ''
+      text__button--disabled: ''
+      bg__button--disabled: ''
+      border__button--disabled: ''
     code: null
     svg: null
     scrollbar: null
