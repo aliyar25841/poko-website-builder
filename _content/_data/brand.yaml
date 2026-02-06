@@ -41,7 +41,7 @@ colors:
   - name: bleu
     value: '#0e79fe'
   - name: noir
-    value: '#000000'
+    value: '#010101'
 palettes:
   - name: main
     text: noir
