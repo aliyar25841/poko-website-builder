@@ -9,8 +9,10 @@ fontStacksContexts:
   - name: main
     body:
       native: system-ui
+      custom: Lexend
     heading:
       native: system-ui
+      custom: Lexend
     code:
       native: monospace-code
 customFontsImport:
