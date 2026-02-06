@@ -8,7 +8,7 @@ name: index
 eleventyNavigation:
   order: 0
 ---
-{% section type="cover", vars={"minHeight":"100dvh","noPadding":false,"gap":"","class":".light-hero"}, blocks=[{"value":"17.10.2025 - 09.08.2026\n\n# FLIGHT\n\nL'exposition qui vous\ndonne des ailes.","type":"markdown"}], advanced={} %}
+{% section type="cover", vars={"minHeight":"100dvh","noPadding":false,"gap":"","class":".flight-hero"}, blocks=[{"value":"17.10.2025 - 09.08.2026\n\n# FLIGHT\n\nL'exposition qui vous\ndonne des ailes.","type":"markdown"}], advanced={} %}
 
 Découverte
 
