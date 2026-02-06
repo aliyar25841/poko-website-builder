@@ -37,7 +37,7 @@ typeScales:
     maxTypeScale: 1.25
 colors:
   - name: orange
-    value: '#fc7e25'
+    value: '#f97316'
 styleContexts:
   - name: main
     value: ctx
