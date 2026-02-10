@@ -1,5 +1,4 @@
-ctxCssImport:
-  filename: _ctx.css
+ctxCssImport: true
 inlineAllStyles: true
 widthsContexts:
   - name: main

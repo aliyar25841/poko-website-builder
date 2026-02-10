@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{lang or 'en'}}" class="no-js">
+  <head>
+    {% partial "_html-head-default.md" %}
+    {% getBundle "html", "head" %}
+  </head>
+  <body>
+    <!-- Navigation -->
+    {% partial "_main-nav.md", {}, "njk" %}
+
+    <main>
+        {% image src=metadata.image.src, aspectRatio="3" %}
+
+
+        <div class="fixed-fluid fixed-right v--content-min:65% items-start">
+            <div class="fluid flow items-start">
+                <h1>{{ title }}</h1>
+                <hr>
+                {{ content | safe }}
+
+                {% button "contact", text="S'inscrire" %}
+            </div>
+            <aside class="card palette-burnt-umber-contrast">
+                <h3>Infos pratiques</h3>
+                <ul>
+                    <li>Date: {{ metadata.date }}</li>
+                    <li>Heure: {{ metadata.time }}</li>
+                    <li>Lieu: {{ metadata.location }}</li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    {% partial '_footer.md' %}
+  </body>
+</html>
+
+{% css %}
+.fluid > * {
+  max-inline-size: 100%;
+}
+{% endcss %}

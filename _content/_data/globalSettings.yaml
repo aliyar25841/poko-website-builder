@@ -1,12 +1,12 @@
 siteName: Repères ASBL
 productionUrl: https://www.reperes.be/
 logo: /_images/reperes-asbl-logo-sans-bords-rvb-01.webp
+htmlHead: ''
+cssHead: ''
 languages:
   - code: fr
-    name: Français
-    customUrlPrefix:
-      prefix: ""
     status: published
+    keepUrlPrefix: false
     isCmsDefault: false
     isWebsiteDefault: true
 collections:

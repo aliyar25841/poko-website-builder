@@ -5,12 +5,26 @@
 }
 
 :root {
+    /*--neutral: black;*/
+    /*--brand: blue;*/
+    /*--accent: red;*/
+    /*--contrast: white;*/
+    /*--muted: gray;*/
+    /*--bright: black;*/
+    /*--neutral: black;*/
+    /*--neutral: black;*/
+
+    /*--width-max: 80rem;*/
+    /*--width-prose: 50rem;*/
+    /*--width-featured: 40rem;*/
+    /*--width-card: 40rem -> 16rem;*/ /* 2 -> 5col */
+    /*--width-token: 80rem;*/
     /* --pi-body: 0; */
     /*--radius-max: 1rem;*/
     /*--radius-prose: 1rem;*/
-    /*--radius-focus: 1rem;*/
+    /*--radius-featured: 1rem;*/
     --radius-card: 1rem;
-    /*--radius-button: 1rem;*/
+    /*--radius-token: 1rem;*/
     --border-width-focus: 5px;
     --p-card: var(--step-2);
     --width-focus: calc(var(--width-prose) / 1.618);
@@ -70,7 +84,8 @@ main :is(.sub-section) {
     }
 }
 
-input, textarea {
+input,
+textarea {
     border-radius: var(--radius-card);
     border: 1px solid currentColor;
     background-color: var(--White);

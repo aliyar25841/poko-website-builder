@@ -12,8 +12,6 @@ eleventyNavigation:
 
 {% image src="/_images/reperes-asbl-logo-sans-bords-rvb-01.webp", alt="Repères ASBL", width="200" %}
 
-button
-
 # Centre de formation à la promotion de la santé
 
 Et si la santé était avant tout une manière de vivre et de se relier aux autres?
