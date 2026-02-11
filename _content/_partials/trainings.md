@@ -1,6 +1,11 @@
 <section class="grid-fluid v--columns:3 max-inline-size-[--width-max]">
+
+{% set palettes = ['delft-blue', 'cooper', 'vermillon', 'orange-peel', 'ylnMn-blue', 'burnt-umber'] %}
+
 {% for training in collections.trainings %}
-<div class="card palette-delft-blue palette-low-contrast">
+{% set currentPalette = palettes[loop.index0 % palettes.length] %}
+
+<div class="card palette-{{ currentPalette }} palette-low-contrast">
 <h4>{{ training.data.name }}</h4>
 {% if training.data.metadata.image.src %}
 <img src="{{ training.data.metadata.image.src }}" alt="{{ training.data.metadata.image.alt }}" title="{{ training.data.metadata.image.title }}" class="border-img">
@@ -14,7 +19,7 @@
 <li>{{ training.data.place }}</li>
 </ul>
 
-{% link url=training.url, text="En savoir plus...", class="button palette-delft-blue-contrast" %}
+{% link url=training.url, text="En savoir plus...", class="button palette-" ~ currentPalette ~ "-contrast" %}
 
 <!-- // TODO: il n'y a pas d'url vers la pages détails formations -->
 
@@ -24,19 +29,12 @@
 
 {% css %}
 
-
-
-
-h4 {
-margin-top: 0;
-}
-
-p, h4, li {
- padding-inline: var(--step--2);
+.card p, .card h4, .card li {
+padding-inline: var(--step--2);
 }
 
 .border-img {
-border-top: 2px solid var(--Delft-Blue);
+border-top: 2px solid currentColor;
 }
 
 ul {
@@ -45,13 +43,13 @@ padding-left: 0;
 list-style-type: none;
 }
 
-li {
+.card li {
 margin-left: 0;
-border-block-start: 1px solid var(--Delft-Blue);
+border-block-start: 1px solid currentColor;
 }
 
-li:last-child {
-border-block-end: 1px solid var(--Delft-Blue);
+.card li:last-child {
+border-block-end: 1px solid currentColor;
 }
 
 {% endcss %}
