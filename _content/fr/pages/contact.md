@@ -70,6 +70,7 @@ Pour toute question ou demande générale, n’hésitez pas à nous contacter vi
 {% icon "tablerOutline:map-pin", width="3rem", height="3rem" %}
 
 :::: hgroup
+
 <h2>Comment nous rendre visite?</h2>
 <p><a href="https://www.google.com/maps/place/Bd+de+Waterloo+99,+1000+Bruxelles/">Boulevard de Waterloo 99, 1000 Bruxelles</a></p>
 ::::
@@ -114,8 +115,21 @@ Nos bureaux sont ouverts du lundi au vendredi, de 9h à 16h30. { .mis-[1rem] }
 
 :::::::
 
+::: flow { .text-center }
+
 #### Vous cherchez une formation spécifique?
 
 Consultez notre catalogue de formations ou découvrez nos interventions sur mesure
 
--BOUTON-Newsletter-
+<!-- -BOUTON-Newsletter- -->
+
+{% partial "btn-newsletter.md" %}
+
+:::
+
+{% css %}
+.section.palette-cooper svg{
+stroke: var(--Orange-peel);
+}
+
+{% endcss %}
