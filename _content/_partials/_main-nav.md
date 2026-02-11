@@ -7,7 +7,7 @@ lang }, { by: 'parent', value: undefined }]) | eleventyNavigation %}
     <nav class="cluster">
     <!-- Main pages navigation -->
     <a href="{{ '/' | locale_url }}">
-    {% image src="/_images/reperes-asbl-logo-sans-bords-rvb-33.webp", class="border-img", alt="Logo Reperes ASBL", title="Logo Reperes ASBL", width="52", loading="eager"%}
+    {% image src="/_images/reperes-asbl-logo-sans-bords-rvb-33.webp", alt="Logo Reperes ASBL", title="Logo Reperes ASBL", width="52", loading="eager"%}
     </a>
     {# {{ navPages | eleventyNavigationToHtml | safe }} #}
     <ul role="list" id="main-nav" class="cluster">
