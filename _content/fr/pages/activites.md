@@ -23,10 +23,13 @@ Chez Repères, nous proposons des dispositifs formatifs conçus pour soutenir le
 :::::::::: div { .activities .flex .flex-col .gap-[--step-4] }
 
 <!-- Activity 1 -->
+
 {% partialWrapper "activity.njk", { image: { src: '/_images/pexels-mikael-blomkvist-6476783.webp' }, color: "cooper", timing: "4 journées + 6 ateliers d’échanges de pratiques", pricing: "±180€/cycle", where: "Bruxelles et Wallonie", practical: "Cycles d’ateliers: durée, fréquence et tarif à déterminer" } %}
 
 :::: hgroup
+
 ### La formation intersectorielle et les cycles d’ateliers
+
 À la rencontre d’autres secteurs et approches du travail psycho-médico-social { .h4 }
 ::::
 
@@ -41,10 +44,13 @@ La richesse de ces modules se situe dans la diversité des profils et des réali
 {% endpartialWrapper %}
 
 <!-- Activity 2 -->
+
 {% partialWrapper "activity.njk", { image: { src: '/_images/pexels-fauxels-3184298.webp' }, color: "delft-blue", timing: "4 journées + 6 ateliers d’échanges de pratiques", pricing: "±180€/cycle", where: "Bruxelles et Wallonie", practical: "Cycles d’ateliers: durée, fréquence et tarif à déterminer" } %}
 
 ::: hgroup
+
 ### La formation intrasectorielle et l’intervision
+
 À la rencontre de mes pairs { .h4 }
 :::
 
@@ -59,10 +65,13 @@ Exemples de secteurs : fédération d’accueil et d’hébergement, fédérati
 {% endpartialWrapper %}
 
 <!-- Activity 3 -->
+
 {% partialWrapper "activity.njk", { image: { src: '/_images/pexels-rethaferguson-3810788.webp' }, color: "burnt-umber", timing: "-", pricing: "-", where: "Bruxelles et Wallonie", practical: "Cycles d’ateliers: durée, fréquence et tarif à déterminer" } %}
 
 ::: hgroup
+
 ### La formation et les accompagnements en équipe
+
 À la rencontre de mes collègues { .h4 }
 :::
 
@@ -75,10 +84,13 @@ Ils sont particulièrement utiles pour construire une vision partagée au sein d
 {% endpartialWrapper %}
 
 <!-- Activity 4 -->
+
 {% partialWrapper "activity.njk", { image: { src: '/_images/pexels-rethaferguson-3810761.webp' }, color: "gray", timing: "-", pricing: "250€/2h", where: "Bruxelles et Wallonie", practical: "Cycles d’ateliers: durée, fréquence et tarif à déterminer" } %}
 
 ::: hgroup
+
 ### La supervision collective
+
 Un dispositif spécifique { .h4 }
 :::
 
@@ -91,6 +103,7 @@ La spécificité de nos supervisions est d’être teintée de nos grilles de le
 {% endpartialWrapper %}
 
 ::::::::::
+
 <!-- End of .activities -->
 
 ## Repères, c’est aussi…
@@ -132,11 +145,21 @@ Nous pouvons vous aider à choisir la formule ou la formation qui vous convient 
 
 {% css %}
 .activity img {
-  margin-block-end: 4rem;
+margin-block-end: 4rem;
 }
 .info-card {
-  float: left;
-  position: relative;
-  left: -10rem;
+float: left;
+position: relative;
+left: -10rem;
 }
+
+.activity:nth-child(even) {
+flex-direction: row-reverse;
+}
+
+.activity:nth-child(even) .info-card {
+float: right;
+left: 10rem;
+}
+
 {% endcss %}

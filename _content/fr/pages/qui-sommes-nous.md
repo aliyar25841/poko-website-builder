@@ -8,7 +8,8 @@ name: Qui sommes-nous?
 eleventyNavigation:
   order: 0
 ---
-{% partialWrapper "page-header.njk", { image: { src: '/_images/6d5a62235cdb6bd5c0150f8e6d800280.webp' } } %}
+
+{% partialWrapper "page-header.njk", { image: { src: '/_images/6d5a62235cdb6bd5c0150f8e6d800280.webp' }, class: 'palette-delft-blue' } %}
 
 # Qui sommes-nous?
 
@@ -22,7 +23,9 @@ Découvrez ici notre histoire, nos valeurs et la vision qui guide nos actions.
 
 ::::: div { .section .fixed-fluid .fixed-right .items-end }
 :::: div
+
 <!-- Fluid block -->
+
 ::: hgroup
 
 ## Un peu d’histoire
@@ -37,6 +40,7 @@ Ces formations s’adressent à des professionnel·les de tous horizons: institu
 ::::
 
 ::: div
+
 <!-- Fixed block -->
 
 {% image src="/_images/reperes-asbl-archive.webp", width="300" %}
@@ -44,6 +48,7 @@ Ces formations s’adressent à des professionnel·les de tous horizons: institu
 :::
 
 :::::
+
 <!--End of first sub-section-->
 
 ::::: div { .section .fixed-fluid }
@@ -68,6 +73,7 @@ La régionalisation de la promotion de la santé à partir de 2014 a transformé
 - En Wallonie, Repères participe aux plans et décrets régionaux, et obtient en 2023 un agrément comme opérateur en promotion de la santé.
 
 ::::::
+
 <!--End of blue section-->
 
 ::: div { .squashed .prose .box .palette-cooper .card .border-5 }
@@ -83,7 +89,7 @@ Pour Repères, la promotion de la santé n’est pas seulement un domaine d’in
 3. Une approche circulaire et systémique
 4. Transversalité et intersectorialité
 5. Participation et co-construction
-:::
+   :::
 
 ::::: div { .section .palette-ylnMn-blue-contrast .bleed-bg .v--bleed-top:14rem }
 
@@ -140,15 +146,15 @@ Cette diversité enrichit nos formations grâce à la mise en commun des expéri
 ⚠️ -PHOTOS + NOMS + FONCTIONS membre de l'équipe-
 
 - **Caroline Lejeune**
-Formatrice
+  Formatrice
 - **Dominique Werbrouck**
-Formatrice
+  Formatrice
 - **Jeanne Reyre**
-⚠️ ?
+  ⚠️ ?
 - **Manoë Jacquet**
-Coordinatrice - Formatrice
+  Coordinatrice - Formatrice
 - **Pascal Kayaert**
-Formateur
+  Formateur
 
 ### Notre gouvernance
 

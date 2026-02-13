@@ -1,5 +1,6 @@
 <div class="grid-fluid v--columns:4 small">
     <div>
+        ⚠️ Changer les liens ⚠️
         <ul>
             <li>
                 {% icon "tablerOutline:brand-linkedin", width="2rem", height="2rem" %}
@@ -39,12 +40,18 @@
 {% css %}
 footer {
 border-image-source: linear-gradient(0deg, var(--Silver), var(--White) 70%) !important;
+height: 100%;
 }
+
+footer div div{
+width: fit-content;
+}
+
 footer p {
 margin-block: 0;
 }
 
-footer p:last-of-type {
+footer div.text-center.small p:last-of-type {
 margin-block: var(--step--1);
 }
 
@@ -63,6 +70,10 @@ gap: var(--step--2);
 
 footer img {
 margin-inline: 0;
+}
+
+footer a {
+background-color: transparent;
 }
 
 {% endcss %}

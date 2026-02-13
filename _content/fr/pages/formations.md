@@ -9,8 +9,10 @@ eleventyNavigation:
   order: 10
 vars: {}
 ---
-:::: header { .palette-burnt-umber}
+
+:::: header { .palette-burnt-umber .hero }
 ::: div { .prose .mx-0 }
+{% partial "svg-boucle" %}
 
 # Formations
 
@@ -37,3 +39,14 @@ Nous pouvons vous aider à choisir la formule ou la formation qui vous convient 
 
 :::
 ::::
+
+{% css %}
+
+.hero {
+background-color: transparent;
+
+z-index: 2;
+margin-block-start: 25%;
+}
+
+{% endcss %}

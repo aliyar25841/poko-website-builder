@@ -15,7 +15,7 @@
     <!-- Footer -->
     {% if '_footer.njk' | partialExists %} {% partial '_footer.njk' %} {%
     elif '_footer.md' | partialExists %}
-    <footer>{% partial '_footer.md' %}</footer>
+    <footer class="bleed-bg">{% partial '_footer.md' %}</footer>
     {% else %} {% partial '_footer' %} {% endif %}
 </body>
 

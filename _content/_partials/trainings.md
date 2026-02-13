@@ -21,8 +21,6 @@
 
 {% link url=training.url, text="En savoir plus...", class="button palette-" ~ currentPalette ~ "-contrast" %}
 
-<!-- // TODO: il n'y a pas d'url vers la pages détails formations -->
-
 </div>
 {% endfor %}
 </section>

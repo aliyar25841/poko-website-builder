@@ -64,6 +64,7 @@ Découvrez nos ressources documentaires et partenaires de terrain actifs dans la
 :::::
 
 ::: div { .section .palette-burnt-umber-contrast .bleed-bg}
+⚠️ Changer la couleur des liens ⚠️
 
 #### En Wallonie
 
@@ -91,10 +92,3 @@ Les fédés de promotion de la santé avec les sites web.
 - lien
 
 ::::::
-
-{% css %}
-.section.palette-burnt-umber-contrast ul, .section.palette-burnt-umber-contrast a{
-color: var(--Orange-peel);
-}
-
-{% endcss %}

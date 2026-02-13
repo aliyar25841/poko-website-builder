@@ -79,7 +79,8 @@ du soin à la jeunesse, du social à la formation et d’autres… { .h4 }
 
 ::::
 
-::: div { .section .bleed-bg .palette-cooper-contrast}
+::: div { .section .bleed-bg .palette-cooper-contrast }
+⚠️ Changer le texte ⚠️
 
 > **«Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy»** {.text-center .h3}
 >
@@ -98,6 +99,10 @@ du soin à la jeunesse, du social à la formation et d’autres… { .h4 }
 #notre-offre-de-formations-et-d-accompagnements{
 margin-inline: 0;
 max-width: 100%;
+}
+
+blockquote{
+border: none;
 }
 
 {% endcss %}

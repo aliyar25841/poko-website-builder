@@ -51,6 +51,8 @@ background-color: var(--color-bg);
 border-radius: 0 0 var(--radius-card) var(--radius-card);
 box-shadow: 0px 3px 6px color-mix(in srgb, var(--Silver) 29%, transparent);
 border-block-end: none;
+position: relative;
+z-index: 10;
 }
 
 nav.cluster {
